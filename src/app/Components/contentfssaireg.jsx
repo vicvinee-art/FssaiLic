@@ -112,16 +112,16 @@ export default function FssaiRegistration() {
                {
   title: "Procedures for Obtaining FSSAI Registration",
   content: (
-    <div className="relative max-w-5xl mx-auto py-14">
+    <div className="relative max-w-5xl mx-auto py-10 md:py-14">
 
       {/* Left Heading */}
       <div className="absolute left-0 top-1/3 text-gray-700 font-semibold text-lg hidden md:block">
         Certification <br /> Process
       </div>
 
-      {/* Curved Path */}
+      {/* Curved Path (Desktop Only) */}
       <svg
-        className="absolute left-20 top-0 h-full"
+        className="absolute left-20 top-0 h-full hidden md:block"
         width="160"
         height="600"
         viewBox="0 0 160 600"
@@ -137,7 +137,7 @@ export default function FssaiRegistration() {
       </svg>
 
       {/* Steps */}
-      <div className="ml-44 space-y-12">
+      <div className="md:ml-44 space-y-6 md:space-y-12">
 
         {[
           "Apply through FoSCoS Portal",
@@ -170,20 +170,25 @@ export default function FssaiRegistration() {
           ];
 
           return (
-            <div key={index} className="flex items-center gap-6">
+            <div
+              key={index}
+              className="flex items-start md:items-center gap-4 md:gap-6"
+            >
 
               {/* Step Circle */}
               <div
-                className={`w-10 h-10 flex items-center justify-center rounded-full text-white font-bold ${colors[index]} shadow`}
+                className={`w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full text-white font-bold ${colors[index]} shadow shrink-0`}
               >
                 {index + 1}
               </div>
 
               {/* Step Bubble */}
               <div
-                className={`px-6 py-4 rounded-full shadow-md ${bgColors[index]} hover:shadow-lg transition`}
+                className={`px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-full shadow-md ${bgColors[index]} hover:shadow-lg transition w-full`}
               >
-                <p className="text-gray-800 font-medium">{step}</p>
+                <p className="text-gray-800 font-medium text-sm md:text-base">
+                  {step}
+                </p>
               </div>
 
             </div>
