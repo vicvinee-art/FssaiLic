@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="flex items-center gap-3 mb-4">
             <div className="bg-white p-2 rounded">
               <Image
-                src="/fssaili-logo.png"
+                src="./fssaili-logo.png"
                 alt="FSSAI License Logo"
                 width={150}
                 height={20}
