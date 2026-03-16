@@ -57,7 +57,7 @@ export default function Hero() {
     <section
       className="relative py-24 px-6 bg-cover bg-center"
       style={{
-        backgroundImage: "url('/herobg-bg.png')",
+        backgroundImage: "url('./herobg-bg.png')",
       }}
     >
       {/* Dark Overlay */}
