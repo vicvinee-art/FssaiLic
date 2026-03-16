@@ -7,7 +7,7 @@ export default function FssaiHero() {
     <section
       className="relative bg-cover bg-center py-24 px-6"
       style={{
-        backgroundImage: "url('/herobg-bg.png')",
+        backgroundImage: "url('./herobg-bg.png')",
       }}
     >
       {/* Overlay */}
