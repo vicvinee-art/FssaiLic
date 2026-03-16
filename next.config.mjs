@@ -11,4 +11,4 @@ const nextConfig = {
   assetPrefix: `/${repo}/`,    // ensures assets load correctly
 };
 
-module.exports = nextConfig;
+export default nextConfig;
