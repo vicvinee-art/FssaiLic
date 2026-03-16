@@ -11,7 +11,7 @@ export default function About() {
           {/* LEFT – Image (Foreground) */}
           <div className="w-full lg:w-1/2">
             <img
-              src="/abouthero-bg.png"
+              src="./abouthero-bg.png"
               alt="FSSAI Background"
               className="w-full h-full object-cover min-h-[500px]"
             />
