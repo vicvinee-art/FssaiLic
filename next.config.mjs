@@ -1,14 +1,14 @@
 /** @type {import('next').NextConfig} */
 
-const repo = "FssaiLic"; // replace with your repo name
+const repo = "FssaiLic"; // your GitHub repository name
 
 const nextConfig = {
-  output: "export",            // required for static export
+  output: "export", // required for GitHub Pages static export
   images: {
-    unoptimized: true,         // prevents next/image error
+    unoptimized: true, // fixes next/image export error
   },
-  basePath: `/${repo}`,        // required for GitHub Pages
-  assetPrefix: `/${repo}/`,    // ensures assets load correctly
+  basePath: "/FssaiLic", // repository name
+  assetPrefix: "/FssaiLic/", // ensures assets load correctly
 };
 
 export default nextConfig;
