@@ -6,7 +6,7 @@ export default function BlogHero() {
     <section
       className="relative w-full py-24 bg-center bg-cover"
       style={{
-        backgroundImage: "url('/herobg-bg.png')",
+        backgroundImage: "url('herobg-bg.png')",
       }}
     >
       {/* Overlay */}
