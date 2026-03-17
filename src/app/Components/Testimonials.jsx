@@ -14,15 +14,15 @@ const testimonials = [
   },
   {
     name: "Rahul Sharma",
-    company: "company 2",
-    logo: "/company2.png",
+    company: "",
+    logo: "",
     comment:
       "Excellent service and professional support. Our FSSAI registration was completed quickly and smoothly.",
   },
   {
     name: "sobhit kumar",
-    company: "company 3",
-    logo: "/company3.png",
+    company: "",
+    logo: "",
     comment:
       "Very reliable team. They guided us through every compliance requirement with clarity and speed.",
   },
