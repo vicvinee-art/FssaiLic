@@ -119,7 +119,7 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Your full name"
                   required
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-2xl font-semibold text-gray-800 focus:ring-2 focus:ring-orange-500"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-xl font-semibold text-gray-800 focus:ring-2 focus:ring-orange-500"
                 />
                 {errors.name && (
                   <p className="text-red-500 text-sm mt-1">{errors.name}</p>
@@ -134,7 +134,7 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder="example@email.com"
                 required
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-2xl font-semibold text-gray-800 focus:ring-2 focus:ring-orange-500"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-xl font-semibold text-gray-800 focus:ring-2 focus:ring-orange-500"
               />
 
               {/* Phone */}
@@ -147,7 +147,7 @@ const Contact = () => {
                   placeholder="9876543210"
                   required
                   maxLength={10}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-2xl font-semibold text-gray-800 focus:ring-2 focus:ring-orange-500"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-xl font-semibold text-gray-800 focus:ring-2 focus:ring-orange-500"
                 />
                 {errors.phone && (
                   <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
@@ -160,7 +160,7 @@ const Contact = () => {
                 value={formData.service}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-2xl font-semibold text-gray-800 focus:ring-2 focus:ring-orange-500"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-xl font-semibold text-gray-800 focus:ring-2 focus:ring-orange-500"
               >
                 <option value="">Select a service</option>
                 <option>FSSAI Registration</option>
