@@ -530,12 +530,12 @@ export default function FssaiStateLicense() {
 
       {/* Contact Link */}
       <div className="text-center mt-12">
-        <a
+        <Link
           href="/contact-us"
           className="inline-block bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 transition"
         >
           Contact Us
-        </a>
+        </Link>
 
         <p className="text-gray-700 mt-4">
           Contact us now and know more about the fee structure!
