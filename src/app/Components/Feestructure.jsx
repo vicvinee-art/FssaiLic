@@ -141,12 +141,12 @@ export default function FeeStructure() {
 
         <div className="text-center mt-10">
           <p className="text-gray-700">
-            <a
+            <Link
               href="/contact-us"
               className="font-semibold hover:text-orange-500"
             >
               Contact Us
-            </a>{""} for personalized assistance or to discuss custom requirements
+            </Link>{""} for personalized assistance or to discuss custom requirements
             and know more about the fee structure!
           </p>
         </div>
