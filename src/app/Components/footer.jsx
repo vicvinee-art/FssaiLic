@@ -73,6 +73,25 @@ export default function Footer() {
               </Link>
               Lucknow +91 99107 92080
             </li>
+            <li className="flex items-center gap-2">
+              <Link
+                href=""
+                target="_blank"
+              >
+                <MapPin size={16} className="hover:text-orange-400 transition cursor-pointer" />
+              </Link>
+              Patna +91 99107 92080
+            </li>
+            <li className="flex items-center gap-2">
+              <Link
+                href=""
+                target="_blank"
+              >
+                <MapPin size={16} className="hover:text-orange-400 transition cursor-pointer" />
+              </Link>
+              Mumbai +91 99107 92080
+            </li>
+
 
           </ul>
         </div>
