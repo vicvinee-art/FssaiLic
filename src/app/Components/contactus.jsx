@@ -57,17 +57,18 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const formPayload = new FormData();
-      formPayload.append("name", formData.name);
-      formPayload.append("email", formData.email);
-      formPayload.append("phone", formData.phone);
-      formPayload.append("service", formData.service);
+     const formPayload = new FormData();
+formPayload.append("name", formData.name);
+formPayload.append("email", formData.email);
+formPayload.append("phone", formData.phone);
+formPayload.append("service", formData.service);
+formPayload.append("source", "Contact page");
 
-      await fetch("https://vicvinee-art.github.io/FssaiLic/contact-us", {
-        method: "POST",
-        mode: "no-cors", // 🔥 required for GitHub Pages
-        body: formPayload,
-      });
+await fetch("YOUR_WEB_APP_URL", {
+  method: "POST",
+  mode: "no-cors",
+  body: formPayload,
+});
 
       setMessage("🎉 Consultation request submitted successfully!");
 
