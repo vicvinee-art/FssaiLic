@@ -32,22 +32,31 @@ export default function Hero() {
     setMessage("");
 
     try {
-      const res = await fetch("/api/consultation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      const formPayload = new FormData();
+formPayload.append("name", formData.name);
+formPayload.append("email", formData.email);
+formPayload.append("phone", formData.phone);
+formPayload.append("source", "Consultation");
+
+await fetch("https://vicvinee-art.github.io/FssaiLic/contact-us", {
+  method: "POST",
+  mode: "no-cors",
+  body: formPayload,
+});
+
+      setMessage("🎉 Consultation request submitted successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
       });
 
-      const data = await res.json();
-
-      if (res.ok) {
-        setMessage("Request submitted successfully!");
-        setFormData({ name: "", email: "", mobile: "" });
-      } else {
-        setMessage(data.message || "Something went wrong.");
-      }
+      setErrors({});
     } catch (error) {
-      setMessage("Server error. Try again.");
+      console.error(error);
+      setMessage("❌ Submission failed. Try again.");
     }
 
     setLoading(false);
