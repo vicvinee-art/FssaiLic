@@ -77,8 +77,9 @@ const ConsultationModal = ({
     setLoading(true);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://vicvinee-art.github.io/FssaiLic/", {
         method: "POST",
+        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
