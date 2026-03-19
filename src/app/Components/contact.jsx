@@ -81,6 +81,7 @@ const ConsultationModal = ({
   try {
     const res = await fetch("https://vicvinee-art.github.io/FssaiLic/", {
       method: "POST",
+      mode: "no-cors",
       body: JSON.stringify(data),
     });
 
