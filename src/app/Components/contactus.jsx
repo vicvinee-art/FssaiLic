@@ -48,7 +48,7 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
 
@@ -57,30 +57,31 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/contact", {
+      const formPayload = new FormData();
+      formPayload.append("name", formData.name);
+      formPayload.append("email", formData.email);
+      formPayload.append("phone", formData.phone);
+      formPayload.append("service", formData.service);
+
+      await fetch("https://vicvinee-art.github.io/FssaiLic/contact-us", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        mode: "no-cors", // 🔥 required for GitHub Pages
+        body: formPayload,
       });
 
-      const data = await response.json();
+      setMessage("🎉 Consultation request submitted successfully!");
 
-      if (response.ok) {
-        setMessage("Consultation request submitted successfully!");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: "",
-        });
-        setErrors({});
-      } else {
-        setMessage(data.message || "Something went wrong.");
-      }
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+      });
+
+      setErrors({});
     } catch (error) {
-      setMessage("Server error. Please try again later.");
+      console.error(error);
+      setMessage("❌ Submission failed. Try again.");
     }
 
     setLoading(false);
