@@ -79,7 +79,7 @@ const ConsultationModal = ({
   };
 
   try {
-    const res = await fetch("YOUR_WEB_APP_URL", {
+    const res = await fetch("https://vicvinee-art.github.io/FssaiLic/", {
       method: "POST",
       body: JSON.stringify(data),
     });
