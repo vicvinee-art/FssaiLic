@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-const googleScriptURL= 
+import { useRouter } from "next/navigation"; 
 const ConsultationModal = ({
   isOpen,
   onClose,
