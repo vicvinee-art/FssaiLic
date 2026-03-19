@@ -70,30 +70,44 @@ const ConsultationModal = ({
 
  const handleSubmit = async (e) => {
   e.preventDefault();
+  setMessage("");
 
-  const data = {
-    name,
-    phone,
-    email,
-    message,
-  };
+  if (!validateForm()) return;
+
+  setLoading(true);
 
   try {
-    const res = await fetch("https://vicvinee-art.github.io/FssaiLic/", {
+    await fetch("https://vicvinee-art.github.io/FssaiLic/", {
       method: "POST",
-      mode: "no-cors",
-      body: JSON.stringify(data),
+      mode: "no-cors", // 🔥 REQUIRED for static sites
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+      }),
     });
 
-    const result = await res.json();
+    // Since no-cors → no response available
+    setMessage("✅ Request submitted successfully!");
 
-    if (result.status === "success") {
-      alert("Form submitted successfully!");
-    }
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      service: defaultService,
+    });
+
+    setErrors({});
   } catch (error) {
     console.error(error);
-    alert("Error submitting form");
+    setMessage("❌ Submission failed. Try again.");
   }
+
+  setLoading(false);
 };
   if (!isOpen) return null;
 
