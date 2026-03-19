@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-
+const googleScriptURL= 
 const ConsultationModal = ({
   isOpen,
   onClose,
@@ -85,7 +85,7 @@ formPayload.append("phone", formData.phone);
 formPayload.append("service", formData.service);
 formPayload.append("source", "Apply Page");
 
-await fetch("https://vicvinee-art.github.io/FssaiLic/apply-now", {
+await fetch("https://script.google.com/macros/s/AKfycbxErYe1qakcrRKabDoHVq2ien0xDh7EYQ4TxuKkHuUvwduPFg1gUt5g_IpgK_lQKIlA/exec", {
   method: "POST",
   mode: "no-cors",
   body: formPayload,
