@@ -50,7 +50,7 @@ await fetch("https://vicvinee-art.github.io/FssaiLic/contact-us", {
         name: "",
         email: "",
         phone: "",
-        service: "",
+       
       });
 
       setErrors({});
