@@ -78,18 +78,18 @@ const ConsultationModal = ({
     setLoading(true);
 
     try {
-      const formPayload = new FormData();
-      formPayload.append("name", formData.name);
-      formPayload.append("email", formData.email);
-      formPayload.append("phone", formData.phone);
-      formPayload.append("service", formData.service);
+     const formPayload = new FormData();
+formPayload.append("name", formData.name);
+formPayload.append("email", formData.email);
+formPayload.append("phone", formData.phone);
+formPayload.append("service", formData.service);
+formPayload.append("source", "Apply Page");
 
-      await fetch("https://vicvinee-art.github.io/FssaiLic/apply-now", {
-        method: "POST",
-        mode: "no-cors", // 🔥 required
-        body: formPayload,
-      });
-
+await fetch("https://vicvinee-art.github.io/FssaiLic/apply-now", {
+  method: "POST",
+  mode: "no-cors",
+  body: formPayload,
+});
       // no-cors → assume success
       setMessage("🎉 Request submitted successfully!");
 
