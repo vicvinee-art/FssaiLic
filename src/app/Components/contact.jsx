@@ -84,7 +84,7 @@ const ConsultationModal = ({
       formPayload.append("phone", formData.phone);
       formPayload.append("service", formData.service);
 
-      await fetch("https://vicvinee-art.github.io/FssaiLic/", {
+      await fetch("https://vicvinee-art.github.io/FssaiLic/apply-now", {
         method: "POST",
         mode: "no-cors", // 🔥 required
         body: formPayload,
