@@ -36,9 +36,9 @@ export default function Hero() {
 formPayload.append("name", formData.name);
 formPayload.append("email", formData.email);
 formPayload.append("phone", formData.phone);
-formPayload.append("source", "Consultation");
+formPayload.append("source", "Hero Homepage");
 
-await fetch("https://vicvinee-art.github.io/FssaiLic/", {
+await fetch("https://script.google.com/macros/s/AKfycbxErYe1qakcrRKabDoHVq2ien0xDh7EYQ4TxuKkHuUvwduPFg1gUt5g_IpgK_lQKIlA/exec", {
   method: "POST",
   mode: "no-cors",
   body: formPayload,
