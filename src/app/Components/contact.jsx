@@ -68,41 +68,32 @@ const ConsultationModal = ({
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setMessage("");
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!validateForm()) return;
-
-    setLoading(true);
-
-    try {
-      const response = await fetch("https://vicvinee-art.github.io/FssaiLic/", {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setMessage("Request submitted successfully!");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: defaultService,
-        });
-        setErrors({});
-      } else {
-        setMessage("Something went wrong.");
-      }
-    } catch {
-      setMessage("Server error. Please try again later.");
-    }
-
-    setLoading(false);
+  const data = {
+    name,
+    phone,
+    email,
+    message,
   };
 
+  try {
+    const res = await fetch("YOUR_WEB_APP_URL", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+
+    const result = await res.json();
+
+    if (result.status === "success") {
+      alert("Form submitted successfully!");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Error submitting form");
+  }
+};
   if (!isOpen) return null;
 
   return (
