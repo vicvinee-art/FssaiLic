@@ -68,52 +68,51 @@ const ConsultationModal = ({
     return Object.keys(newErrors).length === 0;
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
-  setMessage("");
+  // ✅ UPDATED SUBMIT FUNCTION
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setMessage("");
 
-  if (!validateForm()) return;
+    if (!validateForm()) return;
 
-  setLoading(true);
+    setLoading(true);
 
-  try {
-    await fetch("https://vicvinee-art.github.io/FssaiLic/", {
-      method: "POST",
-      mode: "no-cors", // 🔥 REQUIRED for static sites
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        service: formData.service,
-      }),
-    });
+    try {
+      const formPayload = new FormData();
+      formPayload.append("name", formData.name);
+      formPayload.append("email", formData.email);
+      formPayload.append("phone", formData.phone);
+      formPayload.append("service", formData.service);
 
-    // Since no-cors → no response available
-    setMessage("✅ Request submitted successfully!");
+      await fetch("YOUR_GOOGLE_SCRIPT_WEB_APP_URL", {
+        method: "POST",
+        mode: "no-cors", // 🔥 required
+        body: formPayload,
+      });
 
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: defaultService,
-    });
+      // no-cors → assume success
+      setMessage("🎉 Request submitted successfully!");
 
-    setErrors({});
-  } catch (error) {
-    console.error(error);
-    setMessage("❌ Submission failed. Try again.");
-  }
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: defaultService,
+      });
 
-  setLoading(false);
-};
+      setErrors({});
+    } catch (error) {
+      console.error(error);
+      setMessage("❌ Submission failed. Try again.");
+    }
+
+    setLoading(false);
+  };
+
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md ">
-
       <div className="bg-white w-full max-w-lg mx-4 p-8 rounded-2xl shadow-2xl relative animate-fadeIn">
 
         {/* Close Button */}
