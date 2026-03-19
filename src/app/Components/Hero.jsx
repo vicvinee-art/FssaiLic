@@ -38,7 +38,7 @@ formPayload.append("email", formData.email);
 formPayload.append("phone", formData.phone);
 formPayload.append("source", "Consultation");
 
-await fetch("https://vicvinee-art.github.io/FssaiLic/contact-us", {
+await fetch("https://vicvinee-art.github.io/FssaiLic/", {
   method: "POST",
   mode: "no-cors",
   body: formPayload,
