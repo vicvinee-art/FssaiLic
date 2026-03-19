@@ -64,7 +64,7 @@ formPayload.append("phone", formData.phone);
 formPayload.append("service", formData.service);
 formPayload.append("source", "Contact page");
 
-await fetch("YOUR_WEB_APP_URL", {
+await fetch("https://vicvinee-art.github.io/FssaiLic/contact-us", {
   method: "POST",
   mode: "no-cors",
   body: formPayload,
